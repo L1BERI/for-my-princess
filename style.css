@@ -1,0 +1,429 @@
+@font-face {
+  font-family: "Zing Script";
+  src: url("ZingScript.woff2") format("woff2");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DOCKER THREE";
+  src: url("DOCKERTHREE.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sweet Mavka";
+  src: url("SweetMavkaScript.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Woodstick";
+  src: url("Woodstick-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Rostov";
+  src: url("Rostov.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --main-font: "Rostov", sans-serif;
+  --pink-color-1: #fc89ac;
+}
+
+html {
+  font-family: var(--main-font);
+  cursor: url("./heart-arrow.svg"), default;
+  scroll-behavior: smooth;
+}
+html a {
+  cursor: url("./heart-point.png"), pointer;
+}
+
+.container {
+  max-width: 1080px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.header {
+  padding: 30px 0;
+  background: var(--pink-color-1);
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  font-family: "Woodstick", sans-serif;
+  max-width: 200px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  color: #fff;
+}
+.header__logo svg {
+  animation: heartPulse alternate infinite 1s;
+}
+
+@keyframes heartPulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
+  }
+}
+.header__nav-list {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  color: #fff;
+}
+
+.header__nav-link {
+  position: relative;
+  z-index: 1;
+}
+.header__nav-link svg {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  z-index: -1;
+  transition: all 0.3s ease-in-out;
+}
+.header__nav-link:hover svg {
+  transform: translateX(-50%) scale(1);
+}
+
+.hero {
+  padding: 60px 0;
+}
+.hero__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+.hero__text-content {
+  max-width: 500px;
+}
+.hero__title {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+.hero__text {
+  line-height: 1.2;
+  position: relative;
+}
+.hero__text svg {
+  position: absolute;
+  z-index: -1;
+  left: 18%;
+  opacity: 0.3;
+  animation: heartPulse alternate infinite 1s;
+}
+
+.ticker {
+  color: white;
+  background: var(--pink-color-1);
+  padding: 40px 0;
+}
+.ticker .swiper-wrapper {
+  transition-timing-function: linear !important;
+  align-items: center;
+}
+.ticker .swiper-slide {
+  font-size: 40px;
+}
+
+.about {
+  padding: 60px 0;
+}
+.about img {
+  width: 200px;
+}
+.about__container {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+.about__title {
+  font-family: "Woodstick", sans-serif;
+  font-size: 24px;
+}
+.about__swiper {
+  background: #493a3e;
+  border-radius: 30px;
+}
+.about__swiper-slide-inner {
+  padding: 30px;
+  border-radius: 30px;
+  background: var(--pink-color-1);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+.about__swiper-slide-title {
+  font-family: "Woodstick", sans-serif;
+  font-size: 20px;
+  color: #fff;
+}
+.about .image-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 19px;
+  gap: 30px;
+  line-height: 1.24;
+  color: #fff;
+}
+.about .image-box p {
+  max-width: 500px;
+}
+.about__swiper-text {
+  background: #fff;
+  display: block;
+  padding: 15px;
+  border-radius: 24px;
+  line-height: 1.24;
+}
+.about .button-prev,
+.about .button-next {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #db1953;
+  border-radius: 50%;
+  position: absolute;
+  top: 5%;
+  z-index: 5;
+}
+.about .button-prev {
+  left: 20px;
+}
+.about .button-next {
+  right: 20px;
+}
+
+.remember {
+  padding: 60px 0;
+  background: var(--pink-color-1);
+  position: relative;
+}
+.remember__title-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.remember__title {
+  font-family: "Woodstick", sans-serif;
+  font-size: 20px;
+  color: #fff;
+}
+.remember__title span {
+  text-transform: uppercase;
+}
+.remember__subtitle {
+  background: #fff;
+  border-radius: 24px;
+  padding: 15px;
+}
+.remember .swiper {
+  width: 350px;
+  height: 300px;
+  position: relative;
+}
+.remember__swiper-wrapper {
+  padding-bottom: 30px;
+}
+.remember .swiper-slide {
+  max-width: 350px;
+}
+.remember__swiper-slide-inner {
+  background-color: #fff;
+  max-width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px;
+  border-radius: 30px;
+  gap: 30px;
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+}
+.remember__swiper-slide-image-box {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.remember__swiper-slide-image-box img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  vertical-align: middle;
+}
+.remember__swiper-arrows {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+.remember .button-prev,
+.remember .button-next {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #db1953;
+  border-radius: 50%;
+  cursor: url("./heart-point.png"), pointer;
+}
+.remember .articles-image,
+.remember .articles-image-1,
+.remember .articles-image-2,
+.remember .articles-image-3,
+.remember .articles-image-4 {
+  position: absolute;
+  z-index: 0;
+}
+.remember .articles-image {
+  left: 250px;
+}
+.remember .articles-image-1 {
+  left: 250px;
+  bottom: 0;
+}
+.remember .articles-image-2 {
+  right: 350px;
+  bottom: 0;
+}
+.remember .articles-image-3 {
+  right: 279px;
+  top: 15px;
+}
+.remember__content-bottom {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 30px;
+}
+.remember__content-bottom button {
+  background: var(--pink-color-1);
+  padding: 10px 30px;
+  border-radius: 16px;
+  color: #fff;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(199, 59, 169, 0.7411764706);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+.modal__inner {
+  position: fixed;
+  padding: 40px;
+  border-radius: 24px;
+  background-color: #fff;
+  left: 35%;
+  top: 15%;
+}
+.modal__close {
+  width: 30px;
+  height: 30px;
+  background: rgba(51, 51, 51, 0.5019607843);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-family: sans-serif;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.modal__title {
+  font-family: "Woodstick", sans-serif;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+.modal__title span {
+  color: red;
+}
+.modal__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-transform: uppercase;
+}
+
+.modal-open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.footer {
+  padding: 40px 0;
+}
+.footer svg {
+  width: 30px;
+  transition: all 0.3s ease-in-out;
+}
+.footer__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer__logo {
+  font-family: "Woodstick", sans-serif;
+  max-width: 200px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  color: #000000;
+}
+.footer__logo svg {
+  animation: heartPulse alternate infinite 1s;
+}
+.footer__contacts {
+  display: flex;
+  gap: 30px;
+}
+.footer__contacts a {
+  transition: all 0.3s ease-in-out;
+}
+.footer__contacts a:hover svg {
+  transform: scale(1.1);
+}/*# sourceMappingURL=style.css.map */
